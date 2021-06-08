@@ -42,7 +42,7 @@ int main(void)
 			break;
 		}
 		
-		delay(1000);
+		//delay(1000);
     }
 }
 
