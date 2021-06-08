@@ -13,8 +13,8 @@ enum Directions { LEFT, RIGHT };
 
 int main(void)
 {
-    DDRC = 0xFF; // Set PORTC as output	(LEDs connected on DC0 - DC3)
-	DDRD = 0x0; // Set PORTD as input (button connected on DD2)
+    DDRC = 0xFF; // Set PORTC as output	(LEDs connected on PC0 - PC3)
+	DDRD = 0x0; // Set PORTD as input (button connected on PD2)
 	
 	PORTC = 0xFF;// Set initial state of LEDs as off
 	PORTD = 0x0; // Disable internal pull-up resistors
@@ -42,7 +42,7 @@ int main(void)
 			break;
 		}
 		
-		//delay(1000);
+		delay(1000);
     }
 }
 
