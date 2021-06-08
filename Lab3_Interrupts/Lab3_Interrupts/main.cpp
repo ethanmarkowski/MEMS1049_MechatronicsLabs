@@ -103,6 +103,7 @@ ISR(INT1_vect)
 	uint8_t temp_tcnt0 = TCNT0; // Store copy of timing register before starting the ISR
 	TCCR0B = 0x00; // Stop TIMER0
 	
+	// Debounce Interrupt Pin 1
 	delay(debounce);
 	EIFR = 0b00000010;
 	
@@ -110,19 +111,22 @@ ISR(INT1_vect)
 	PORTC = 0x0;
 	delay(2000);
 	
-	// Display 15 through 0 on the LED array in binary
-	for (int8_t count = 15; count >= 0; --count)
+	// Turn LEDs off one at a time
+	uint8_t count = 0b1111;
+	while (1)
 	{
+		count = count >> 1;
 		PORTC = ~count;
+		
+		if (count == 0) { break; }
 		delay(500);
 	}
 	
-	delay(500); // Extra 500 ms delay so that a full 1 second pause occurs when the LEDs are all off before the normal pattern resumes
+	delay(1000); // Extra 500 ms delay so that a full 1 second pause occurs when the LEDs are all off before the normal pattern resumes
 	
 	TCCR0B = 0b00000011; //1<<CS01 | 1<<CS00; TCCR0B = 0x03; // Start TIMER0, Normal mode, crystal clock, prescaler = 64
 	TCNT0 = temp_tcnt0; // Restore timing register to state from before the ISR execution
 	
 	PORTC = temp_portc; // Restore PORTC to state from before the ISR execution
-	
-	EIFR = 0b00000001; // Clear the INT0 flag to ensure a INT0 ISR execution does not immediately follow the INT1 ISR. However repeats of INT1 are allowed
+	EIFR = 0b00000001; // Clear the INT0 flag to ensure an INT0 ISR execution does not immediately follow the INT1 ISR. However repeats of INT1 are allowed
 }
