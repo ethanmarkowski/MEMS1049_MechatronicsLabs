@@ -12,9 +12,9 @@
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <AssemblyName>Lab 3 - Interrupts</AssemblyName>
-    <Name>Lab 3 - Interrupts</Name>
-    <RootNamespace>Lab 3 - Interrupts</RootNamespace>
+    <AssemblyName>Lab3_Interrupts</AssemblyName>
+    <Name>Lab3_Interrupts</Name>
+    <RootNamespace>Lab3_Interrupts</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>

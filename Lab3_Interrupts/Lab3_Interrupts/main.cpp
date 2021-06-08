@@ -1,8 +1,8 @@
 /*
- * Lab 3 - Interrupts.cpp
+ * Lab3_Interrupts.cpp
  *
- * Created: 6/7/2021 4:57:04 PM
- * Author : Ethan Markowski
+ * Created: 6/8/2021 5:00:09 AM
+ * Author : ethan
  */ 
 
 #include <avr/io.h>

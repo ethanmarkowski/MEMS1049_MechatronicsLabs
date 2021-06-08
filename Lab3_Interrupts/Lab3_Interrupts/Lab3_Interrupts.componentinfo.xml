@@ -52,7 +52,7 @@
 					<Attribute>template</Attribute>
 					<Category>source</Category>
 					<Condition>C Exe</Condition>
-					<FileContentHash>fv+K4WnHAykQGmO7nyJTvw==</FileContentHash>
+					<FileContentHash>+3exOk5LUSaWcAny3sGf3A==</FileContentHash>
 					<FileVersion></FileVersion>
 					<Name>templates/main.cpp</Name>
 					<SelectString>Main file (.cpp)</SelectString>
