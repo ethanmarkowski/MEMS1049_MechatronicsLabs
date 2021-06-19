@@ -1,6 +1,6 @@
 ## Lab 2 - Timing and Delays
 
-![](Lab 2 - Demo.gif)
+![]("Lab 2 - Demo.gif")
 
 This lab demonstrates the use of the ATmega328P microcontroller to execute simple timing control of four LEDs that are connected to pins 0 - 3 of PORTC. This is accomplished using TCNT0, the microcontroller's 8-bit timing register, and a 16 MHz quartz crystal oscillator. A single button is also connected on PD2.
 
