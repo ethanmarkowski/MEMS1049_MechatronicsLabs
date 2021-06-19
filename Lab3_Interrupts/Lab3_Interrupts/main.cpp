@@ -122,7 +122,7 @@ ISR(INT1_vect)
 		delay(500);
 	}
 	
-	delay(1000); // Extra 500 ms delay so that a full 1 second pause occurs when the LEDs are all off before the normal pattern resumes
+	delay(1000);
 	
 	TCCR0B = 0b00000011; //1<<CS01 | 1<<CS00; TCCR0B = 0x03; // Start TIMER0, Normal mode, crystal clock, prescaler = 64
 	TCNT0 = temp_tcnt0; // Restore timing register to state from before the ISR execution
