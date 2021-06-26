@@ -7,8 +7,7 @@
 
 #include <avr/io.h>
 
-uint8_t result = 0;
-
+// Read analog input
 uint8_t analogRead();
 
 int main(void)
