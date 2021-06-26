@@ -32,7 +32,7 @@ int main(void)
 // Read analog input
 uint8_t analogRead()
 {
-	ADCSRA = ADCSRA |= (1<<ADSC); // Start A/D conversion
+	ADCSRA |= (1<<ADSC); // Start A/D conversion
 	while ((ADCSRA & (1<<ADIF)) == 0); // Blocking delay to wait for the A/D conversion
 	
 	return ADCH; // Keep high byte of 10-bit result (throw away lowest two bits)
