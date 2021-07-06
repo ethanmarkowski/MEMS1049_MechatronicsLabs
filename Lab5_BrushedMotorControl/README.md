@@ -2,7 +2,7 @@
 
 ![](https://github.com/ethanmarkowski/MEMS1049_MechatronicsLabs/blob/master/Lab5_BrushedMotorControl/Lab%205%20-%20Demo.gif)
 
-![](https://github.com/ethanmarkowski/MEMS1049_MechatronicsLabs/blob/master/Lab5_BrushedMotorControl/Lab%205%20-%20Schematic.pdf)
+[embed](https://github.com/ethanmarkowski/MEMS1049_MechatronicsLabs/blob/master/Lab5_BrushedMotorControl/Lab%205%20-%20Schematic.pdf)[\embed]
 
 This lab demonstrates the use of an H-Bridge to control a small, brushed DC motor. Hardware connections are shown in the above schematic that was produced using AutoDesk Eagle.
 
