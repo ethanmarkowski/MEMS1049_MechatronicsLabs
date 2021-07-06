@@ -41,6 +41,10 @@ int main(void)
 			case 4:
 			(controller.ButtonRead()) ? state = FORWARD_SLOW : state = FORWARD_VARIABLE;
 			break;
+			
+			case 5:
+			(controller.ButtonRead()) ? state = FORWARD_SLOW : state = FORWARD_VARIABLE;
+			break;
 		}
 		
 		// Update LED array
