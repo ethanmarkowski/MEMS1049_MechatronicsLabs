@@ -35,7 +35,7 @@ int main(void)
 			for (uint8_t stepCount = 180 / stepAngle; stepCount > 0; --stepCount)
 			{
 				leds.SetIndex(0);
-				motor.Step(7.5, 5000 / (180 / stepAngle));
+				motor.Step(stepAngle, 5000 / (180 / stepAngle));
 				
 				// Activate alternate motor sequence
 				if (button.IsPressed()) { altMotor(); }
@@ -49,7 +49,7 @@ int main(void)
 			for (uint8_t stepCount = 360 / stepAngle; stepCount > 0; --stepCount)
 			{
 				leds.SetIndex(1);
-				motor.Step(-7.5, 5000 / (360 / stepAngle));
+				motor.Step(-stepAngle, 5000 / (360 / stepAngle));
 				
 				// Activate alternate motor sequence
 				if (button.IsPressed()) { altMotor(); }

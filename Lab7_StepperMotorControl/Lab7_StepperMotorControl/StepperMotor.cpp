@@ -75,16 +75,13 @@ void StepperMotor::StepCCW()
 // Move motor the specified number of degrees (positive is clockwise, negative is counter-clockwise) using the specified delay interval between steps
  void StepperMotor::Step(float angle, uint8_t stepDelay)
  {	
-	 uint16_t steps = abs(angle / _stepAngle); // Calculate number of steps
-		 
-	 while (steps)
+	 // Calculate number of steps needed based on desired angular displacement and angle between steps		 
+	 for (uint16_t steps = abs(angle / _stepAngle); steps > 0; --steps)
 	 {
 		 // Set direction based on the sign of the angle parameter
 		 if (angle > 0) { StepCW(); }
 		 else { StepCCW(); }
 
 		 Delay(stepDelay);
-		  
-		 --steps;
 	 }
  }
