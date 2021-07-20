@@ -7,18 +7,19 @@
 
 #include <avr/io.h>
 #include "AnalogSensor.h"
-
-uint8_t test;
+#include "Usart.h"
 
 int main(void)
 {
 	AnalogSensor pot;
+	Usart usart;
 	
 	pot.Setup();
+	usart.Setup();
+	usart.EnableTx();
 	
     while (1) 
     {
-		test = pot.AnalogRead();
+		if (usart.IsAvailable()) { usart.Write(pot.AnalogRead()); }
     }
 }
-

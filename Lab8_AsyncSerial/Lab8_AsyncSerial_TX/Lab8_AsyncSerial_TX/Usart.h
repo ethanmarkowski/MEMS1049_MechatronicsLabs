@@ -23,8 +23,11 @@ public:
 	// Enable data reception
 	void EnableRx() const;
 	
-	// Check if available
+	// Check if Usart is available
 	bool IsAvailable() const;
+	
+	// Check if new data has been received
+	bool IsReceived() const;
 	
 	// Transmit data
 	void Write(uint8_t data) const;
