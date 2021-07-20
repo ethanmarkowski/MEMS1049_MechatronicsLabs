@@ -20,4 +20,4 @@ public:
 	uint8_t AnalogRead() const;
 };
 
-#endif /* ANALOGSENSOR_H_ */
+#endif
