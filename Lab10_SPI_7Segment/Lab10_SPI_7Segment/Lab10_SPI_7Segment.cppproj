@@ -12,9 +12,9 @@
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <AssemblyName>Lab8_AsyncSerial_TX</AssemblyName>
-    <Name>Lab8_AsyncSerial_TX</Name>
-    <RootNamespace>Lab8_AsyncSerial_TX</RootNamespace>
+    <AssemblyName>Lab10_SPI_7Segment</AssemblyName>
+    <Name>Lab10_SPI_7Segment</Name>
+    <RootNamespace>Lab10_SPI_7Segment</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
@@ -169,19 +169,25 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AnalogSensor.cpp">
+    <Compile Include="LedDisplay.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="AnalogSensor.h">
+    <Compile Include="LedDisplay.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Usart.cpp">
+    <Compile Include="Spi.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Usart.h">
+    <Compile Include="Spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Timer0.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Timer0.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

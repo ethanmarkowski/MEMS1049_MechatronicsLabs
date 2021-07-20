@@ -18,8 +18,8 @@ int main(void)
 	usart.Setup();
 	usart.EnableTx();
 	
-    while (1) 
+    while (1)
     {
-		if (usart.IsAvailable()) { usart.Write(pot.AnalogRead()); }
+	    if (usart.IsAvailable()) { usart.Write(pot.AnalogRead()); }
     }
 }
