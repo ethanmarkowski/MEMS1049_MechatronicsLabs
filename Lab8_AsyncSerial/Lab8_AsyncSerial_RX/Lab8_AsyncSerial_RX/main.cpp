@@ -9,9 +9,6 @@
 #include "Pwm.h"
 #include "Usart.h"
 
-bool isReceived;
-uint8_t data;
-
 int main(void)
 {
 	Pwm led(true);
