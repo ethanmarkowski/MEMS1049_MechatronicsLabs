@@ -70,7 +70,7 @@ uint8_t I2C::ReadData(bool ACK) const
 	
 	// Check for whether ACK or NO_ACK should be sent upon receipt of byte from secondary
 	if (ACK) { TWCR = (1 << TWINT) | (1 << TWEA) | (1 << TWEN); } // Initiate Read with ACK -- write 1 to TWINT to clear it and initiate action, and set TWEA and TWEN
-	else { TWCR = (1<<TWINT) | (1<<TWEN); } // Initiate Read with NO_ACK-- write 1 to TWINT to clear it and initiate action, and set TWEN
+	else { TWCR = (1 << TWINT) | (1 << TWEN); } // Initiate Read with NO_ACK-- write 1 to TWINT to clear it and initiate action, and set TWEN
 		
 	while (!(TWCR & (1 << TWINT))); // Wait for action to finish (poll TWINT bit)
 

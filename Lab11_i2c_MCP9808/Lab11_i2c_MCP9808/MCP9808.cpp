@@ -15,7 +15,7 @@ void MCP9808::Setup() const
 	
 	// Set resolution of MCP9808 temperature sensor to 0.5 degrees C
 	i2c.Start();
-	i2c.WriteAddress(0x16);
+	i2c.WriteAddress(0x18);
 	i2c.WriteData(0x08);
 	i2c.WriteData(0b00);
 	i2c.Stop();
@@ -29,11 +29,11 @@ float MCP9808::Read() const
 {
 	// Read ambient temperature register
 	i2c.Start();
-	i2c.WriteAddress(0x16);
+	i2c.WriteAddress(0x18);
 	i2c.WriteData(0x05);
 	i2c.Start();
-	i2c.ReadAddress(0x16);
-	uint8_t upperByte = i2c.ReadData(true) & 0x1F;
+	i2c.ReadAddress(0x18);
+	uint8_t upperByte = i2c.ReadData(true) & 0x1F; // Read and clear flag bits
 	uint8_t lowerByte = i2c.ReadData(false);
 	i2c.Stop();
 	
@@ -42,12 +42,12 @@ float MCP9808::Read() const
 	if ((upperByte & 0x10) == 0x10)
 	{
 		upperByte &= 0x0F; // Clear SIGN bit
-		tempInC = 256 - (upperByte * 16 + lowerByte / 16);
+		tempInC = 256 - (upperByte * 16 + (float)lowerByte / 16);
 	}
 	
 	else
 	{
-		tempInC = upperByte * 16 + lowerByte / 16;
+		tempInC = upperByte * 16 + (float)lowerByte / 16;
 	}
 	
 	// Return temperature in Fahrenheit
