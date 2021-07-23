@@ -10,8 +10,6 @@
 #include "LedDisplay.h"
 #include "MCP9808.h"
 
-float test;
-
 int main()
 {
 	Timer0 timer;
@@ -20,21 +18,19 @@ int main()
 	
 	display.Setup();
 	tempSensor.Setup();
+	
+	display.On();
 
 	while (1)
 	{
-		test = tempSensor.Read();
-		//display.On();
-		//
-		//display.Write(2, 0);
-		//display.Write(1, 7);
-		//timer.Delay(500);
-		//
-		//display.Write(2, 2);
-		//display.Write(1, 0);
-		//timer.Delay(500);
-		//
-		//display.Off();
-		//timer.Delay(1000);
+		// Read temperature sensor and cast reading as 8-bit integer
+		uint8_t temperature = tempSensor.Read();
+		
+		// Write temperature to LCD display
+		display.Write(2, temperature / 10);
+		display.Write(1, temperature - 10 * (temperature / 10));
+
+		// Delay 1 second
+		timer.Delay(1000);
 	}
 }
