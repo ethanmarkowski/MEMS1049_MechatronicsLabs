@@ -1,4 +1,4 @@
-## Lab 8 - Asynchronous Serial Communication
+## Lab 8 - SPI and 7-Segment LED Displays
 
 ![](https://github.com/ethanmarkowski/MEMS1049_MechatronicsLabs/blob/master/Lab10_SPI_7Segment/Lab%2010%20-%20Demo.gif)
 
